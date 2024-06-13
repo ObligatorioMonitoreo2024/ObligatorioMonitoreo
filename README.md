@@ -27,6 +27,10 @@ sudo dnf upgrade
 
 ## Configuraciones
 
+<p align = "center"> 
+<img src = "img/Servidores.png">
+</p>
+
 ## Pruebas
 
 ## Mejoras
