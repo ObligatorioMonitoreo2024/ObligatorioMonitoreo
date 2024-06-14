@@ -27,10 +27,9 @@ Este repositorio contiene la documentación y los archivos necesarios para despl
 Como servidor de monitoreo utilizamos Zabbix, como servidor de syslog utilizamos el stack de grafana-loki-prometheus y como servidor web utilizamos apache.
 Decidimos desplegar la infraestructura sobre Docker ya que nos brinda ventajas importantes frente al despliegue sobre maquinas virtuales, algunas de ellas son, menor consumo de recursos, tiempo de despliegue, portabilidad, imágenes oficiales, etc. El mayor beneficio que le vimos a Docker es la rapidez con la que desplegamos el ambiente una vez que tenemos las definiciones, esto nos permitió ir generando cambios en el `Docker-compose` compartirlo entre nosotros y en minutos ambos teníamos la última versión de la infra para seguir con las pruebas.
 
-
-
-
 ## Diagrama
+
+
 
 ## Requerimientos
 
@@ -86,9 +85,42 @@ docker-compose up -d
 
 ## Configuraciones
 
+Una vez desplegada la infra procedemos a realizar las configuraciones correspondientes, para poder acceder a los servicios que están corriendo en los contenedores lo debemos de realizar mediante la ip del servidor linux que corre Docker y en el puerto correspondiente al contenedor según la definición que se realizó en el docker-compose.
+
+**Zabbix:**
+
+El frontend de zabbix esta expuesto en el puerto 80 por la cual para acceder basta con poner la ip del servidor de docker en el navegador.
+
 <p align = "center"> 
-<img src = "img/Servidores.png">
+<img src = "img/LoginZabbix.png">
 </p>
+
+Las credenciales para el logueo son Admin zabbix.
+
+Una vez logueado podemos ver en el dashboard que tenemos una alerta indicando que el zabbix-agent no está disponible.
+Esta alerta es del monitoreo del propio zabbix-server que se realiza mediante el zabbix-agent que se encuentra desplegado en un contenedor aparte.
+
+<p align = "center"> 
+<img src = "img/DashboardZabbix.png">
+</p>
+
+Para resolver esto debemos ajustar la configuración del host de zabbix y especificarle que el monitoreo lo realice mediante el contenedor de zabbix-agent.
+
+Ingresamos en Datacollection - Host.
+<p align = "center"> 
+<img src = "img/hostzabbix.png">
+</p>
+
+Dentro del host de zabbix-server cambiamos la interface del agente para que utilice dns name zabbix-agent y connect to DNS.
+<p align = "center"> 
+<img src = "img/confighostzabbix.png">
+</p>
+
+Damos update y verificamos que levante el monitoreo por el zabbix-agent.
+<p align = "center"> 
+<img src = "img/hostzabbixok.png">
+</p>
+
 
 ## Pruebas
 
