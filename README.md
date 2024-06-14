@@ -40,11 +40,11 @@ sudo dnf upgrade
 
 ## Problemas
 
-Nos encontramos con un problema en el contenedor del webserver que corre apache, debido a que el mismo no generaba registros en el archivo /var/log/apache2/error.log al consultar una página que no existía.
+Nos encontramos con un problema en el contenedor del webserver que corre apache, debido a que el mismo no generaba registros en el archivo `/var/log/apache2/error.log` al consultar una página que no existía.
 Para resolver esto realizamos los siguientes pasos:
--	Creamos un archivo httpd.conf en el directorio donde se encuentra el Dockerfile en el servidor de Docker.
+-	Creamos un archivo `httpd.conf` en el directorio donde se encuentra el Dockerfile en el servidor de Docker.
 -	A este archivo se le modifico el valor de LogLevel de warm a debug
--	En el archivo Dockerfile se copia el httpd.conf local hacia el contenedor en la siguiente ruta /etc/apache2/httpd.conf,generando una imagen con el archivo modificado.
+-	En el archivo Dockerfile se copia el `httpd.conf` local hacia el contenedor en la siguiente ruta `/etc/apache2/httpd.conf`,generando una imagen con el archivo modificado.
 
 
 ## Bibliografia
