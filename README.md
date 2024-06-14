@@ -1,7 +1,9 @@
 # Trabajo Obligatorio 2024 - Universidad ORT
 
 **Materia:** Monitoreo y Supervisión de Redes  
+
 **Docentes:** Álvaro Sánchez - Carlos Mansilla
+
 **Alumnos:** Diego Docampo (162385) - Santiago Clavijo (174971)
 
 ----
@@ -80,6 +82,7 @@ git clone https://github.com/ObligatorioMonitoreo2024/ObligatorioMonitoreo.git
 docker-compose up -d
 ```
 
+<script src="https://asciinema.org/a/SgtuH7s1maTbFwgra1FIYlaBD.js" id="asciicast-SgtuH7s1maTbFwgra1FIYlaBD" async="true"></script>
 
 ## Configuraciones
 
