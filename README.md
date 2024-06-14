@@ -39,4 +39,8 @@ sudo dnf upgrade
 
 ## Bibliografia
 
+-Material de aulas
+-[Zabbix](https://www.zabbix.com/container_images)
+-[Grafana-Loki](https://grafana.com/docs/loki/latest/setup/install/docker/)
+
 
