@@ -30,7 +30,7 @@ Decidimos desplegar la infraestructura sobre Docker ya que nos brinda ventajas i
 ## Diagrama
 
 <p align = "center"> 
-<img src = "img/diagrama.jpg">
+<img src = "img/diagrama.png">
 </p>
 
 ## Requerimientos
