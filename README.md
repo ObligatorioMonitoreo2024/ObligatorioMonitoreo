@@ -187,7 +187,7 @@ A nivel de la interface grafica podemos verificar como se encuentra todo configu
 **Caída de servicio apache**
 
 <p align = "center"> 
-<img src = "img/problem.png" width="400" height="600">
+<img src = "img/problem.png" width="400" height="500">
 </p>
 
 ## Mejoras
