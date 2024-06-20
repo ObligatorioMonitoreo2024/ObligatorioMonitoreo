@@ -24,7 +24,7 @@
 
 Este repositorio contiene la documentación y los archivos necesarios para desplegar la infraestructura en Docker utilizada para llevar a cabo el trabajo obligatorio solicitado. El mismo consta de instalar y configurar 2 servidores con aplicaciones que resuelvan el monitoreo de la red y recolección de eventos de syslog. Adicionalmente instalar un servidor web para que sea monitoreado.
 
-Como servidor de monitoreo utilizamos Zabbix, como servidor de syslog utilizamos el stack de grafana-loki-prometheus y como servidor web utilizamos apache.
+Como servidor de monitoreo utilizamos Zabbix, como servidor de syslog utilizamos el stack de grafana-loki-promtail y como servidor web utilizamos apache.
 Decidimos desplegar la infraestructura sobre Docker ya que nos brinda ventajas importantes frente al despliegue sobre maquinas virtuales, algunas de ellas son, menor consumo de recursos, tiempo de despliegue, portabilidad, imágenes oficiales, etc. El mayor beneficio que le vimos a Docker es la rapidez con la que desplegamos el ambiente una vez que tenemos las definiciones, esto nos permitió ir generando cambios en el `Docker-compose` compartirlo entre nosotros y en minutos ambos teníamos la última versión de la infra para seguir con las pruebas.
 
 ## Diagrama
@@ -89,7 +89,7 @@ docker-compose up -d
 
 Una vez desplegada la infra procedemos a realizar las configuraciones correspondientes a los monitoreos, para poder acceder a los servicios que están corriendo en los contenedores lo debemos de realizar mediante la ip del servidor linux que corre Docker y en el puerto correspondiente al contenedor según la definición que se realizó en el docker-compose.
 
-**Zabbix:**
+**Monitoreo - Zabbix:**
 
 El frontend de zabbix esta expuesto en el puerto 80 por la cual para acceder basta con poner la ip del servidor de docker en el navegador.
 
@@ -129,7 +129,13 @@ El monitoreo del servidor web lo realizamos mediante el agente zabbix que se des
 <img src = "img/webserver.png">
 </p>
 
-**Grafana-Loki:**
+**Syslog - Grafana/Loki/Promtail:**
+
+La solución de syslog consta de tres componentes:
+- Promtail: Agente de recolección de logs para Loki.
+- Loki: Sistema de almacenamiento de logs optimizado para grandes volúmenes de datos.
+- Grafana: Plataforma de visualización y monitorización que se integra con Loki y otras fuentes de datos para proporcionar dashboards interactivos.
+
 
 
 
