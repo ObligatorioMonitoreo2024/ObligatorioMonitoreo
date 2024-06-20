@@ -123,7 +123,7 @@ Damos update y verificamos que levante el monitoreo por el zabbix-agent.
 <img src = "img/hostzabbixok.png">
 </p>
 
-El monitoreo del servidor web lo realizamos mediante el agente zabbix que se desplego en el mismo contenedor personalizado mediante el archivo dockerfile. A nivel de zabbix server damos de alta un nuevo host y le asignamos los templates de Apache y Linux. Con el de apache monitoreamos lo relativo al servicio web y con el de linux al sistema operativo (CPU, RAM, Disco, etc).
+El monitoreo del servidor web lo realizamos mediante el agente zabbix que se desplego en el mismo contenedor personalizado mediante el archivo `dockerfile`. A nivel de zabbix server damos de alta un nuevo host y le asignamos los templates de Apache y Linux. Con el de apache monitoreamos lo relativo al servicio web y con el de linux al sistema operativo (CPU, RAM, Disco, etc).
 
 <p align = "center"> 
 <img src = "img/webserver.png">
@@ -175,17 +175,20 @@ La configuración de estas herramientas las realizamos a nivel del docker-compos
 - Envío de logs desde Promtail a Loki.
 - Visualización de datos desde Grafana.
 
-En el contenedor del web server se montó un volumen persistente apuntando a la carpeta de logs de apache (/var/log/apache2/) y en el contenedor de Promtail se montó el mismo volumen apuntando a la carpeta /var/log/ que es desde donde Promatil lee los archivos para enviarle a Loki. En el contenedor de Loki se levanta el servicio en el puerto 3100 y en el despliegue del contenedor de Grafana se realiza el alta del datasource de Loki referenciando al contenedor de Loki desplegado anteriormente.
+En el contenedor del web server se montó un volumen persistente apuntando a la carpeta de logs de apache (`/var/log/apache2/`) y en el contenedor de Promtail se montó el mismo volumen apuntando a la carpeta `/var/log/` que es desde donde Promatil lee los archivos para enviarle a Loki. En el contenedor de Loki se levanta el servicio en el puerto 3100 y en el despliegue del contenedor de Grafana se realiza el alta del datasource de Loki referenciando al contenedor de Loki desplegado anteriormente.
 A nivel de la interface grafica podemos verificar como se encuentra todo configurado.
 
 <p align = "center"> 
 <img src = "img/grafana.png">
 </p>
 
-
-
-
 ## Pruebas
+
+**Caída de servicio apache**
+
+<p align = "center"> 
+<img src = "img/problem.png" width="400" height="600">
+</p>
 
 ## Mejoras
 
