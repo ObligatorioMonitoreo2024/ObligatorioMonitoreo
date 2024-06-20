@@ -207,6 +207,8 @@ A nivel de la interface grafica podemos verificar como se encuentra todo configu
 
 **Filtrado de logs en Loki**
 
+Se crea una consulta de los logs que no contengan la palabra zabbix para que no nos muestre los logs generados por el monitoreo de zabbix.
+
 **Log de acceso**
 
 <p align = "center"> 
