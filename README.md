@@ -140,8 +140,10 @@ Estas tres herramientas nos permiten realizar una gestión de logs de manera vis
 
 La configuración de estas herramientas las realizamos a nivel del docker-compose y se divide en los siguientes pasos:
 - Acceso a los logs de apache mediante Promtail.
-    Se logra mediante 
+  Se logra mediante 
+
 - Envío de logs desde Promtail a Loki.
+
 - Visualización de datos desde Grafana.
 
 
