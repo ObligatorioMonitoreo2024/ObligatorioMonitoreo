@@ -94,7 +94,7 @@ Una vez desplegada la infra procedemos a realizar las configuraciones correspond
 El frontend de zabbix esta expuesto en el puerto 80 por la cual para acceder basta con poner la ip del servidor de docker en el navegador.
 
 <p align = "center"> 
-<img src = "img/LoginZabbix.png">
+<img src = "img/LoginZabbix.png" width="500" height="400">
 </p>
 
 Las credenciales para el logueo son Admin zabbix.
@@ -136,13 +136,13 @@ Para el envío de alertas mediante Telegram se realizaron las siguientes configu
 - Crear bot en telegram mediante BotFather
 
 <p align = "center"> 
-<img src = "img/Bot.jpeg">
+<img src = "img/Bot.jpeg" width="400" height="300">
 </p>
 
 - Crear grupo de telegram con el bot (inicializarlo) y el usuario IDBot para obtener el id del grupo al cual zabbix debe enviar los mensajes
 
 <p align = "center"> 
-<img src = "img/grupo.jpeg" width="300" height="200">
+<img src = "img/grupo.jpeg" width="400" height="300">
 </p>
 
 - Configurar MediaType en zabbix con los datos obtenidos de ID y token
@@ -154,7 +154,7 @@ Para el envío de alertas mediante Telegram se realizaron las siguientes configu
 - Habilitar trigger actions para que se envie mensaje al grupo de administradores mediante telegram
 
 <p align = "center"> 
-<img src = "img/trigger.png">
+<img src = "img/trigger.png" width="400" height="300">
 </p>
 
 <p align = "center"> 
