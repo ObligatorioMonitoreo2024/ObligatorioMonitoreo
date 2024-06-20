@@ -188,23 +188,36 @@ A nivel de la interface grafica podemos verificar como se encuentra todo configu
 **Caída de servicio apache**
 
 <p align = "center"> 
-<img src = "img/problem.png" width="400" height="500">
+<img src = "img/problem.png" width="400" height="400">
 </p>
 
 **Consumo alto de CPU**
 
 <p align = "center"> 
-<img src = "img/problem1.jpeg" width="400" height="500">
+<img src = "img/problem1.jpeg" width="400" height="400">
 </p>
 
 <p align = "center"> 
-<img src = "img/problem2.jpeg" width="400" height="500">
+<img src = "img/problem2.jpeg" width="400" height="400">
 </p>
 
 <p align = "center"> 
 <img src = "img/problemas.png">
 </p>
 
+**Filtrado de logs en Loki**
+
+**Log de acceso**
+
+<p align = "center"> 
+<img src = "img/loki.png">
+</p>
+
+**Log de error**
+
+<p align = "center"> 
+<img src = "img/lokierror.png">
+</p>
 
 ## Mejoras
 
