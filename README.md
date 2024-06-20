@@ -194,11 +194,11 @@ A nivel de la interface grafica podemos verificar como se encuentra todo configu
 **Consumo alto de CPU**
 
 <p align = "center"> 
-<img src = "img/problem1.png" width="400" height="500">
+<img src = "img/problem1.jpeg" width="400" height="500">
 </p>
 
 <p align = "center"> 
-<img src = "img/problem2.png" width="400" height="500">
+<img src = "img/problem2.jpeg" width="400" height="500">
 </p>
 
 <p align = "center"> 
