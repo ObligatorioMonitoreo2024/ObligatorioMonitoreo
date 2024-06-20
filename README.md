@@ -184,11 +184,27 @@ A nivel de la interface grafica podemos verificar como se encuentra todo configu
 
 ## Pruebas
 
+
 **Caída de servicio apache**
 
 <p align = "center"> 
 <img src = "img/problem.png" width="400" height="500">
 </p>
+
+**Consumo alto de CPU**
+
+<p align = "center"> 
+<img src = "img/problem1.png" width="400" height="500">
+</p>
+
+<p align = "center"> 
+<img src = "img/problem2.png" width="400" height="500">
+</p>
+
+<p align = "center"> 
+<img src = "img/problemas.png">
+</p>
+
 
 ## Mejoras
 
