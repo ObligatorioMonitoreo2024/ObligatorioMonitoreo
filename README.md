@@ -87,7 +87,7 @@ docker-compose up -d
 
 ## Configuraciones
 
-Una vez desplegada la infra procedemos a realizar las configuraciones correspondientes, para poder acceder a los servicios que están corriendo en los contenedores lo debemos de realizar mediante la ip del servidor linux que corre Docker y en el puerto correspondiente al contenedor según la definición que se realizó en el docker-compose.
+Una vez desplegada la infra procedemos a realizar las configuraciones correspondientes a los monitoreos, para poder acceder a los servicios que están corriendo en los contenedores lo debemos de realizar mediante la ip del servidor linux que corre Docker y en el puerto correspondiente al contenedor según la definición que se realizó en el docker-compose.
 
 **Zabbix:**
 
@@ -122,6 +122,15 @@ Damos update y verificamos que levante el monitoreo por el zabbix-agent.
 <p align = "center"> 
 <img src = "img/hostzabbixok.png">
 </p>
+
+El monitoreo del servidor web lo realizamos mediante el agente zabbix que se desplego en el mismo contenedor personalizado mediante el archivo dockerfile. A nivel de zabbix server damos de alta un nuevo host y le asignamos los templates de Apache y Linux. Con el de apache monitoreamos lo relativo al servicio web y con el de linux al sistema operativo (CPU, RAM, Disco, etc).
+
+<p align = "center"> 
+<img src = "img/webserver.png">
+</p>
+
+**Grafana-Loki:**
+
 
 
 ## Pruebas
