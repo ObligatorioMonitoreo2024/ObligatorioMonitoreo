@@ -22,10 +22,10 @@
 
 ## Introducción
 
-Este repositorio contiene la documentación y los archivos necesarios para desplegar la infraestructura en Docker utilizada para llevar a cabo el trabajo obligatorio solicitado. El mismo consta de instalar y configurar 2 servidores con aplicaciones que resuelvan el monitoreo de la red y recolección de eventos de syslog. Adicionalmente instalar un servidor web para que sea monitoreado.
+Este repositorio contiene la documentación y los archivos necesarios para desplegar la infraestructura en Docker utilizada para llevar a cabo el trabajo obligatorio solicitado. El mismo consta de instalar y configurar una solucion de monitoreo de la red y otra de recolección de eventos de syslog. Adicionalmente instalar un servidor web para que sea monitoreado.
 
 Como servidor de monitoreo utilizamos Zabbix, como servidor de syslog utilizamos el stack de grafana-loki-promtail y como servidor web utilizamos apache.
-Decidimos desplegar la infraestructura sobre Docker ya que nos brinda ventajas importantes frente al despliegue sobre maquinas virtuales, algunas de ellas son, menor consumo de recursos, tiempo de despliegue, portabilidad, imágenes oficiales, etc. El mayor beneficio que le vimos a Docker es la rapidez con la que desplegamos el ambiente una vez que tenemos las definiciones, esto nos permitió ir generando cambios en el `Docker-compose` compartirlo entre nosotros y en minutos ambos teníamos la última versión de la infra para seguir con las pruebas.
+Decidimos desplegar la infraestructura sobre Docker ya que nos brinda ventajas importantes frente al despliegue sobre maquinas virtuales, algunas de ellas son, menor consumo de recursos, tiempo de despliegue, portabilidad, imágenes oficiales, etc. El mayor beneficio que le vimos a Docker es la rapidez con la que desplegamos el ambiente una vez que tenemos las definiciones, esto nos permitió ir generando cambios en el `Docker-compose` compartirlo entre nosotros mediante GitHub y en minutos ambos teníamos la última versión de la infra para seguir con las pruebas.
 
 ## Diagrama
 
@@ -80,6 +80,7 @@ git clone https://github.com/ObligatorioMonitoreo2024/ObligatorioMonitoreo.git
 - Ejecutar el docker-compose:
 
 ```bash
+cd ObligatorioMonitoreo
 docker-compose up -d
 ```
 
@@ -87,7 +88,8 @@ docker-compose up -d
 
 ## Configuraciones
 
-Una vez desplegada la infra procedemos a realizar las configuraciones correspondientes a los monitoreos, para poder acceder a los servicios que están corriendo en los contenedores lo debemos de realizar mediante la ip del servidor linux que corre Docker y en el puerto correspondiente al contenedor según la definición que se realizó en el docker-compose.
+Una vez desplegada la infra procedemos a realizar las configuraciones correspondientes a los monitoreos solicitados. 
+Para poder acceder a los servicios que están corriendo en los contenedores lo debemos de realizar mediante la ip del servidor linux que corre Docker y en el puerto correspondiente al contenedor según la definición que se realizó en el `docker-compose`.
 
 **Monitoreo - Zabbix:**
 
@@ -154,7 +156,7 @@ Para el envío de alertas mediante Telegram se realizaron las siguientes configu
 - Habilitar trigger actions para que se envie mensaje al grupo de administradores mediante telegram
 
 <p align = "center"> 
-<img src = "img/trigger.png" width="400" height="300">
+<img src = "img/trigger.png" width="300" height="200">
 </p>
 
 <p align = "center"> 
