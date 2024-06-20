@@ -140,14 +140,15 @@ Estas tres herramientas nos permiten realizar una gestión de logs de manera vis
 
 La configuración de estas herramientas las realizamos a nivel del docker-compose y se divide en los siguientes pasos:
 - Acceso a los logs de apache mediante Promtail.
-
-  Se logra mediante 
-
 - Envío de logs desde Promtail a Loki.
-
 - Visualización de datos desde Grafana.
 
+En el contenedor del web server se montó un volumen persistente apuntando a la carpeta de logs de apache (/var/log/apache2/) y en el contenedor de Promtail se montó el mismo volumen apuntando a la carpeta /var/log/ que es desde donde Promatil lee los archivos para enviarle a Loki. En el contenedor de Loki se levanta el servicio en el puerto 3100 y en el despliegue del contenedor de Grafana se realiza el alta del datasource de Loki referenciando al contenedor de Loki desplegado anteriormente.
+A nivel de la interface grafica podemos verificar como se encuentra todo configurado.
 
+<p align = "center"> 
+<img src = "img/grafana.png">
+</p>
 
 
 
