@@ -136,13 +136,13 @@ Para el envío de alertas mediante Telegram se realizaron las siguientes configu
 - Crear bot en telegram mediante BotFather
 
 <p align = "center"> 
-<img src = "img/bot.png">
+<img src = "img/bot.jpeg">
 </p>
 
 - Crear grupo de telegram con el bot (inicializarlo) y el usuario IDBot para obtener el id del grupo al cual zabbix debe enviar los mensajes
 
 <p align = "center"> 
-<img src = "img/grupo.png">
+<img src = "img/grupo.jpeg">
 </p>
 
 - Configurar MediaType en zabbix con los datos obtenidos de ID y token
