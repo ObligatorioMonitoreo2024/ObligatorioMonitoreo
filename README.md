@@ -129,6 +129,38 @@ El monitoreo del servidor web lo realizamos mediante el agente zabbix que se des
 <img src = "img/webserver.png">
 </p>
 
+**Notificaciones mediante Telegram**
+
+Para el envío de alertas mediante Telegram se realizaron las siguientes configuraciones:
+
+- Crear bot en telegram mediante BotFather
+
+<p align = "center"> 
+<img src = "img/bot.png">
+</p>
+
+- Crear grupo de telegram con el bot (inicializarlo) y el usuario IDBot para obtener el id del grupo al cual zabbix debe enviar los mensajes
+
+<p align = "center"> 
+<img src = "img/grupo.png">
+</p>
+
+- Configurar MediaType en zabbix con los datos obtenidos de ID y token
+
+<p align = "center"> 
+<img src = "img/mediatype.png">
+</p>
+
+- Habilitar trigger actions para que se envie mensaje al grupo de administradores mediante telegram
+
+<p align = "center"> 
+<img src = "img/trigger.png">
+</p>
+
+<p align = "center"> 
+<img src = "img/action.png">
+</p>
+
 **Syslog:**
 
 La solución de syslog consta de tres componentes:
