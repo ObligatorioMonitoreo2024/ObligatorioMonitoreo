@@ -129,12 +129,22 @@ El monitoreo del servidor web lo realizamos mediante el agente zabbix que se des
 <img src = "img/webserver.png">
 </p>
 
-**Syslog - Grafana/Loki/Promtail:**
+**Syslog:**
 
 La solución de syslog consta de tres componentes:
 - Promtail: Agente de recolección de logs para Loki.
 - Loki: Sistema de almacenamiento de logs optimizado para grandes volúmenes de datos.
 - Grafana: Plataforma de visualización y monitorización que se integra con Loki y otras fuentes de datos para proporcionar dashboards interactivos.
+
+Estas tres herramientas nos permiten realizar una gestión de logs de manera visual y poder generar alertas en base a patrones detectados en los mismos.
+
+La configuración de estas herramientas las realizamos a nivel del docker-compose y se divide en los siguientes pasos:
+- Acceso a los logs de apache mediante Promtail.
+    Se logra mediante 
+- Envío de logs desde Promtail a Loki.
+- Visualización de datos desde Grafana.
+
+
 
 
 
